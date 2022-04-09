@@ -44,7 +44,7 @@ function coinFlip() {
  */
 
 function coinFlips(flips) {
-  if (flips < 0 || flips == '') {
+  if (flips < 0 || flips == '' || flips == null) {
     return;
   } else {
   var list = [];
