@@ -18,7 +18,11 @@ else {
     guessFlips.flip;
     guessFlips.result;
 
-    if (myArgs2 == 'tails') {
+    if (myArgs2 != 'tails' || 'heads') {
+        console.log('Error: no input');
+    }
+
+    else if (myArgs2 == 'tails') {
         guessFlips.call = 'tails';
         var newCoin = coinFlip();
         guessFlips.flip = newCoin;
