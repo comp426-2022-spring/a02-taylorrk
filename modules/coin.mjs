@@ -45,7 +45,7 @@ function coinFlip() {
 
 function coinFlips(flips) {
   if (flips < 0 || flips == '' || flips == null) {
-    return;
+    coinFlip();
   } else {
       var list = [];
       for(var i = 0; i < flips; i++) {
