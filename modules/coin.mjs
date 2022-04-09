@@ -44,11 +44,15 @@ function coinFlip() {
  */
 
 function coinFlips(flips) {
+  if (flips < 0 || flips == '') {
+    return;
+  } else {
   var list = [];
   for(var i = 0; i < flips; i++) {
     list[i] = coinFlip();
   }
   return list;
+}
 }
 
 /** Count multiple flips
