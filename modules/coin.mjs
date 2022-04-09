@@ -49,7 +49,7 @@ function coinFlips(flips) {
   } else {
       var list = [];
       for(var i = 0; i < flips; i++) {
-      list[i] = coinFlip();
+      list.push(coinFlip());
       }
       return list;
   }
