@@ -47,12 +47,12 @@ function coinFlips(flips) {
   if (flips < 0 || flips == '' || flips == null) {
     return;
   } else {
-  var list = [];
-  for(var i = 0; i < flips; i++) {
-    list[i] = coinFlip();
+      var list = [];
+      for(var i = 0; i < flips; i++) {
+      list[i] = coinFlip();
+      }
+      return list;
   }
-  return list;
-}
 }
 
 /** Count multiple flips
