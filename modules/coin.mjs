@@ -69,24 +69,21 @@ function coinFlips(flips) {
  * @returns {{ heads: number, tails: number }}
  */
 
-function countFlips(array) {
-  var heads = 0;
-  var tails = 0;
-  for(var i = 0; array.length > i; i++) {
-    if (array[i] == "heads") {
-      heads++;
-    }
-    else {
-      tails++
-    }
-
+ function countFlips(array) {
+  const counts = {
+    heads: 0,
+    tails: 0
   }
-  const finalFlips = new Object();
-  finalFlips.tails = tails;
-  finalFlips.heads = heads;
-  return finalFlips;
-  
 
+  
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] == "heads") {
+      counts.heads++;
+    } else if (array[i] == "tails") {
+      counts.tails++;
+  }
+}
+  return counts
 }
 
 /** Flip a coin!
