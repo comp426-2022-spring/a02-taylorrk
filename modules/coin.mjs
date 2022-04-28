@@ -46,7 +46,7 @@ function coinFlip() {
 
 function coinFlips(flips) {
   if (flips < 0 || flips == '' || flips == null) {
-    console.log('Error: no input');
+    flips = 1;
   } else {
       var list = [];
       for(var i = 0; i < flips; i++) {
@@ -79,7 +79,7 @@ function countFlips(array) {
     else {
       tails++
     }
-    
+
   }
   const finalFlips = new Object();
   finalFlips.tails = tails;
