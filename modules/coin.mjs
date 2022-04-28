@@ -79,6 +79,7 @@ function countFlips(array) {
     else {
       tails++
     }
+    
   }
   const finalFlips = new Object();
   finalFlips.tails = tails;
