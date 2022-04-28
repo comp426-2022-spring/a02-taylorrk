@@ -74,10 +74,10 @@ function countFlips(array) {
   var tails = 0;
   for(var i = 0; array.length > i; i++) {
     if (array[i] == "heads") {
-      tails++;
+      heads++;
     }
     else {
-      heads++
+      tails++
     }
   }
   const finalFlips = new Object();
