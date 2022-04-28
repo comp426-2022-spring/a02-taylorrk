@@ -9,6 +9,7 @@
  * @param {*}
  * @returns {string} 
  * 
+ * 
  * example: coinFlip()
  * returns: heads
  * 
@@ -73,10 +74,10 @@ function countFlips(array) {
   var tails = 0;
   for(var i = 0; array.length > i; i++) {
     if (array[i] == "heads") {
-      heads++;
+      tails++;
     }
     else {
-      tails++
+      heads++
     }
   }
   const finalFlips = new Object();

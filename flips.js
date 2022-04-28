@@ -1,5 +1,7 @@
 import { coinFlip, countFlips, coinFlips, flipACoin } from './modules/coin.mjs';
 
+import minimist from 'minimist'; 
+
 if (process.argv.length < 3) {
     console.log(coinFlip());
 }
@@ -18,8 +20,8 @@ else {
         }
         var final = parseInt(myArgs2);
         var listOfCoins = coinFlips(final);
-        console.log('', listOfCoins);
+        console.log(listOfCoins);
         var final = countFlips(listOfCoins);
-        console.log('', final);
+        console.log(final);
     }
 }
