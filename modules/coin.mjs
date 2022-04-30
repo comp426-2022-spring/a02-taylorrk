@@ -9,20 +9,13 @@
  * @param {*}
  * @returns {string} 
  * 
- * 
  * example: coinFlip()
  * returns: heads
  * 
  */
 
-function coinFlip() {
-  var ran = Math.random();
-  if (ran < 0.5) {
-    return "heads";
-  }
-  else {
-    return "tails";
-  }
+ function coinFlip() {
+  return Math.floor(Math.random() * 2) == 0 ? "tails" : "heads"
 }
 
 /** Multiple coin flips
@@ -45,15 +38,14 @@ function coinFlip() {
  */
 
 function coinFlips(flips) {
-  if (flips < 0 || flips == '' || flips == null) {
+  if (flips < 1 || typeof flips ==="undefined"){
     flips = 1;
-  } else {
-      var list = [];
-      for(var i = 0; i < flips; i++) {
-      list.push(coinFlip());
-      }
-      return list;
   }
+  const results = [];
+  for(var i = 0; i < flips; i++) {
+    results.push(coinFlip());
+  }
+  return results;
 }
 
 /** Count multiple flips
@@ -69,21 +61,17 @@ function coinFlips(flips) {
  * @returns {{ heads: number, tails: number }}
  */
 
- function countFlips(array) {
-  const counts = {
-    heads: 0,
-    tails: 0
-  }
-
-  
+function countFlips(array) {
+  let hNum = 0;
+  let tailCount = 0;
   for (var i = 0; i < array.length; i++) {
-    if (array[i] == "heads") {
-      counts.heads++;
-    } else if (array[i] == "tails") {
-      counts.tails++;
+    if(array[i].localeCompare('heads')) {
+      hNum++;
+    } else {
+      tailCount++;
+    } // we can assume only heads or tails as we are providing the array ourselves
   }
-}
-  return counts
+  return {heads: tailCount,tails: hNum};
 }
 
 /** Flip a coin!
@@ -98,13 +86,8 @@ function coinFlips(flips) {
  */
 
 function flipACoin(call) {
-  var flip = coinFlip();
-  if (call == flip) {
-    return "win";
-  }
-  else {
-    return "lose";
-  }
+  let flip = coinFlip();
+  return {call: call, flip: flip, result: flip == call ? "win" : "lose" }
 }
 
 
